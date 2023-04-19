@@ -28,7 +28,7 @@ install_3proxy() {
 gen_3proxy() {
      cat <<EOF
 daemon
-maxconn 5000
+maxconn 3000
 nserver 1.1.1.1
 nserver 8.8.4.4
 nserver 2001:4860:4860::8888
@@ -98,7 +98,7 @@ echo "Internal ip = ${IP4}. Exteranl sub for ip6 = ${IP6}"
 echo "How many proxy do you want to create? Example 500"
 read COUNT
 
-FIRST_PORT=50000
+FIRST_PORT=10000
 LAST_PORT=$(($FIRST_PORT + $COUNT))
 
 gen_data >$WORKDIR/data.txt
